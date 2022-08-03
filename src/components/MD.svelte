@@ -5,7 +5,7 @@
 
   let html : string;
 
-  $: html = marked.parse(md);
+  $: html = marked.parse(md.trim());
 </script>
 
 <div>{@html html}</div>

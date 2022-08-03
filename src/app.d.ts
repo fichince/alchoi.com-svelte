@@ -17,5 +17,6 @@ declare namespace App {
     description: string, 
     title: string,
     tags?: string[],
+    content?: string,
   }
 }

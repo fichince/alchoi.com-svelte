@@ -24,12 +24,13 @@
 
   let expanded : boolean = true;
   let innerWidth : number = 640;
-  let pageTitle = $page.stuff.pageTitle;
   let titleBar = '';
 
   const toggleExpanded = () => {
     expanded = !expanded;
   };
+
+  $: pageTitle = $page.stuff.pageTitle;
 
   $: expanded = innerWidth > 640;
 
