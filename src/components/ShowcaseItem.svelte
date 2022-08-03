@@ -1,4 +1,6 @@
 <script lang="ts">
+import MD from "./MD.svelte";
+
   export let item : {
     title?: string,
     description?: string,
@@ -25,12 +27,12 @@
   <div class="text-center flex-grow">
     <div class="text-xl sm:text-2xl lg:text-3xl mb-1 font-display">
       <a href={url} rel="noopener noreferrer" target="_blank">
-        {title}
+        <MD md={title} />
       </a>
     </div>
 
     <div class="text-sm">
-      {description}
+      <MD md={description} />
     </div>
   </div>
 </article>
