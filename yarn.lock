@@ -22,6 +22,21 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fontsource/crimson-pro@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/crimson-pro/-/crimson-pro-4.5.8.tgz#853928b9052392fd424d826c8485c7993f687515"
+  integrity sha512-nhFZj0GdGT6ZCmGiRFBxRpNW9djuxEDmlIqfB4aDdEw+8wmxC348T2WDL8YYpurYXorw5MxicpdEfpPwLmdcBQ==
+
+"@fontsource/mononoki@^4.5.3":
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/@fontsource/mononoki/-/mononoki-4.5.3.tgz#a2125454f135a1d1e4347d856fb245941da85569"
+  integrity sha512-dKzSkFxNZO2lYX8lNyyY/+KHShHjp1ddSckWB34qWJNTuNiWfHb/nzhWsIGaGwGoOHEFTRIMNUaZ7zEKyW5OoA==
+
+"@fontsource/special-elite@^4.5.7":
+  version "4.5.7"
+  resolved "https://registry.yarnpkg.com/@fontsource/special-elite/-/special-elite-4.5.7.tgz#9f93f849e5fbcc62aa8c4814af13183e60b79ff0"
+  integrity sha512-TVTHt9/NYIDIH2Zejr3wbC6bR5GZDZ31EmG4H8r0E/QqMwrIJt7ZPSzc09lLWFpwbgXGdP17+UE/KmEMd279rg==
+
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.9.5.tgz#2cbaf9a89460da24b5ca6531b8bbfc23e1df50c7"
@@ -166,6 +181,15 @@
     kleur "^4.1.5"
     magic-string "^0.26.2"
     svelte-hmr "^0.14.12"
+
+"@tailwindcss/typography@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.5.4.tgz#ad8c9e6808bae297bb7826742e4789f2a9f09a48"
+  integrity sha512-QEdg40EmGvE7kKoDei8zr5sf4D1pIayHj4R31bH3lX8x2BtTiR+jNejYPOkhbmy3DXgkMF9jC8xqNiGFAuL9Sg==
+  dependencies:
+    lodash.castarray "^4.4.0"
+    lodash.isplainobject "^4.0.6"
+    lodash.merge "^4.6.2"
 
 "@types/json-schema@^7.0.9":
   version "7.0.11"
@@ -1189,6 +1213,16 @@ lilconfig@^2.0.5:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.0.6.tgz#32a384558bd58af3d4c6e077dd1ad1d397bc69d4"
   integrity sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==
+
+lodash.castarray@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.castarray/-/lodash.castarray-4.4.0.tgz#c02513515e309daddd4c24c60cfddcf5976d9115"
+  integrity sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==
+
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+  integrity sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==
 
 lodash.merge@^4.6.2:
   version "4.6.2"
