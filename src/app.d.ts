@@ -10,4 +10,12 @@ declare namespace App {
   interface Stuff {
     pageTitle? : string;
   }
+
+  type BlogPost = {
+    slug : string,
+    date : string,
+    description: string, 
+    title: string,
+    tags?: string[],
+  }
 }
