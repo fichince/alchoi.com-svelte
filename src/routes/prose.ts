@@ -1,8 +1,8 @@
 import * as fs from 'fs/promises';
 import { parse } from 'yaml';
+import type { RequestHandler } from '@sveltejs/kit';
 
-/** @type {import('@sveltejs/kit').RequestHandler} */
-export async function GET() {
+export const GET : RequestHandler = async () => {
 
     let f = null;
     try {
