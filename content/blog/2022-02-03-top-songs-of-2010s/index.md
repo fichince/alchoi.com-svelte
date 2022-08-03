@@ -7,7 +7,7 @@ tags:
  - music
 ---
 
-I'm clearly two years late on this, but when I recently looked back at my post of [favourite albums of the previous decade](../2010-01-20-favourite-albums-of-the-2000-s), I couldn't help doing this again, if only to leave myself something to look back on in another 10 years.
+I'm clearly two years late on this, but when I recently looked back at my post of [favourite albums of the previous decade](/blog/2010-01-20-favourite-albums-of-the-2000-s), I couldn't help doing this again, if only to leave myself something to look back on in another 10 years.
 
 <ol reversed="reversed">
 <li><em>12 Bit Blues</em> - Kid Koala (2012)</li>

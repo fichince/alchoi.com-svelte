@@ -8,7 +8,7 @@ tags:
   - coding
 ---
 
-[Previously](../2022-01-04-revive-again), I mentioned that I was building this website using [Jekyll](https://jekyllrb.com/), after having moved off the friendly-but-closed system of Squarespace. Since then, I pivoted again, and landed on [Gatsby](https://www.gatsbyjs.com/). My motivations for the switch were somewhat esoteric so I thought I'd explain myself here.
+[Previously](/blog/2022-01-04-revive-again), I mentioned that I was building this website using [Jekyll](https://jekyllrb.com/), after having moved off the friendly-but-closed system of Squarespace. Since then, I pivoted again, and landed on [Gatsby](https://www.gatsbyjs.com/). My motivations for the switch were somewhat esoteric so I thought I'd explain myself here.
 
 I have nothing against Jekyll itself. I like the simplicity of its templating system and how you can see exactly what HTML it generates. I like that blog posts just go into a directory called `_posts` and get picked up without any extra configuration.
 
