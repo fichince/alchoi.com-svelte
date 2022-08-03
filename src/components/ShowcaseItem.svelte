@@ -1,0 +1,36 @@
+<script lang="ts">
+  export let item : {
+    title?: string,
+    description?: string,
+    image?: string,
+    url?: string
+  } = {};
+
+  const { title, description, image, url } = item;
+</script>
+
+<article class="rounded-md
+  shadow-lg
+  m-3 p-6 w-full sm:w-3/4
+  justify-self-center self-center
+  flex flex-col sm:flex-row 
+  items-center bg-tertiary
+  hover:scale-y-105 transition-all">
+  <div class="mb-3 sm:mb-0 sm:mr-5">
+    <a href={url} rel="noopener noreferrer" target="_blank">
+      <img src={image} alt={title} />
+    </a>
+  </div>
+
+  <div class="text-center flex-grow">
+    <div class="text-xl sm:text-2xl lg:text-3xl mb-1 font-display">
+      <a href={url} rel="noopener noreferrer" target="_blank">
+        {title}
+      </a>
+    </div>
+
+    <div class="text-sm">
+      {description}
+    </div>
+  </div>
+</article>
