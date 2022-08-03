@@ -1,6 +1,7 @@
-<script context="module">
-  /** @type {import('./__types/prose').Load} */
-  export async function load({ props }) {
+<script context="module" lang="ts">
+  import type { Load } from './__types/prose';
+
+  export const load: Load = async ({ props }) => {
     return {
       stuff: {
         pageTitle: 'Prose'
