@@ -1,3 +1,15 @@
+<script context="module">
+  /** @type {import('./__types/prose').Load} */
+  export async function load({ props }) {
+    return {
+      stuff: {
+        pageTitle: 'Prose'
+      },
+      props
+    };
+  };
+</script>
+
 <script lang="ts">
   import Showcase from '../components/Showcase.svelte';
   export let prose : any[];
