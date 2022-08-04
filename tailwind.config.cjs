@@ -35,10 +35,10 @@ module.exports = {
             'code::after': {
               content: 'none',
             },
-            'blockquote::before': {
+            'blockquote p:first-of-type::before': {
               content: 'none',
             },
-            'blockquote::after': {
+            'blockquote p:last-of-type::after': {
               content: 'none',
             },
           }
