@@ -10,6 +10,13 @@
   };
 </script>
 
+<script>
+  import Icon from 'svelte-awesome';
+  import githubSquare from 'svelte-awesome/icons/githubSquare';
+  import facebookSquare from 'svelte-awesome/icons/facebookSquare';
+  import linkedinSquare from 'svelte-awesome/icons/linkedinSquare';
+</script>
+
 <div class="
   h-32 w-32
   sm:h-52 sm:w-52 
@@ -40,7 +47,7 @@
     <a href="/prose">Prose</a>
   </div>
   <div class="hover:scale-110">
-    <a href="/code">Code</a>
+    <a href="/">Code</a>
   </div>
 </div>
 
@@ -48,14 +55,14 @@
   text-pop text-2xl sm:text-4xl">
   <a href="https://github.com/fichince" target="_blank" rel="noreferrer noopener"
     class="hover:scale-110">
-    <!--<FontAwesomeIcon icon={faGithubSquare} />--> github
+    <Icon data={githubSquare} scale={3} />
   </a>
   <a href="https://www.facebook.com/albert.choi.583/" target="_blank" rel="noreferrer noopener"
     class="hover:scale-110">
-    <!--<FontAwesomeIcon icon={faFacebookSquare} />--> facebook
+    <Icon data={facebookSquare} scale={3} />
   </a>
   <a href="https://www.linkedin.com/in/albert-choi-202b8923/" target="_blank" rel="noreferrer noopener"
     class="hover:scale-110">
-    <!--<FontAwesomeIcon icon={faLinkedin} />--> linkedin
+    <Icon data={linkedinSquare} scale={3} />
   </a>
 </div>
