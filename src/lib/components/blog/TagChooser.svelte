@@ -13,8 +13,6 @@
     text-accent
   `;
 
-  const selectedClasses = 'italic font-bold text-pop';
-
   $: allTags = 
       reduce<App.BlogPost, string[]>(posts, (memo, post) => (
         [ ...memo, ...(post?.tags || []) ]
