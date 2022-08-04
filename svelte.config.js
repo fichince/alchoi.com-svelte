@@ -13,7 +13,7 @@ const config = {
 			default: true,
 		},
 		browser: {
-			router: false,
+			router: true,
 		},
 		trailingSlash: 'always',
 	}
