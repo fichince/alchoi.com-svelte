@@ -14,7 +14,8 @@ const config = {
 		},
 		browser: {
 			router: false,
-		}
+		},
+		trailingSlash: 'always',
 	}
 };
 
