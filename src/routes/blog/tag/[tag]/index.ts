@@ -10,8 +10,8 @@ export const GET : RequestHandler = async ({ params }) => {
     return {
       status: 200,
       body: {
-        posts: posts.filter((post) => post.tags?.includes(params.tag)),
-        tag: params.tag,
+        posts,
+        selectedTag: params.tag,
       }
     };
 
