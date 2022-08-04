@@ -122,4 +122,4 @@ As for the bracelet itself, I forgot to pack it when I checked out of the hotel.
 
 
 [1]:	https://app.thestorygraph.com/books/b956c14d-b0d7-464f-9d26-2fad12e37dce
-[2]:	../2022-01-20-beijing-confidential
+[2]:	/blog/2022-01-20-beijing-confidential

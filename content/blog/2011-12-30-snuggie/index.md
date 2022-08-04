@@ -7,10 +7,10 @@ tags:
   - fun
 ---
 
-![snuggie1](./snuggie1.jpg)
+![snuggie1](/images/blog/snuggie1.jpg)
 
-![snuggie2](./snuggie2.jpg)
+![snuggie2](/images/blog/snuggie2.jpg)
 
-![snuggie3](./snuggie3.jpg)
+![snuggie3](/images/blog/snuggie3.jpg)
 
-![snuggie4](./snuggie4.jpg)
+![snuggie4](/images/blog/snuggie4.jpg)

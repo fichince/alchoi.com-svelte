@@ -26,8 +26,8 @@ Yu sees this as a breakdown in the morality of the country. He seems almost nost
 
 Personally, I've seen this attitude from the older generations of my family, who seem to believe that obedience is paramount. I don't always agree, but I've been trying to recognize where they’re coming from. This book has further enlightened me to the differences between the two cultures that I inhabit.
 
-[1]:	../2022-01-20-beijing-confidential
+[1]:	/blog/2022-01-20-beijing-confidential
 [2]:	https://app.thestorygraph.com/books/cb7766a0-1df8-4546-9f61-20296fbccc9b
-[3]:	./cover.jpg
+[3]:	/images/blog/china-in-10-words.jpg
 [4]:	https://app.thestorygraph.com/books/a800bcb0-746e-494d-8531-459391d0d954
 [5]:	https://app.thestorygraph.com/books/547fb024-de78-43df-bcf3-2415eb3e6865

@@ -9,7 +9,7 @@ tags:
 
 Got the statement from my corporate credit card. It made me feel good.  
   
-![creditcard](./creditcard.png)
+![creditcard](/images/blog/creditcard.png)
 
 ONE BILLION DOLLARS...  
   

@@ -15,23 +15,23 @@ I had heard good things about [Google SketchUp](http://google.com/sketchup), so 
   
 Voila:
 
-![sketchup1](./sketchup1.jpg)
+![sketchup1](/images/blog/sketchup1.jpg)
 
-![sketchup2](./sketchup2.jpg)
+![sketchup2](/images/blog/sketchup2.jpg)
 
 This is the living room.  
 
-![sketchup3](./sketchup3.jpg)
+![sketchup3](/images/blog/sketchup3.jpg)
 
-![sketchup4](./sketchup4.jpg)
+![sketchup4](/images/blog/sketchup4.jpg)
    
 I'm considering maybe putting another shelf next to the TV for additional storage of books, DVDs, or whatever. On the other hand, it's good to have some empty space so that it's not too cluttered. There's also a pretty large storage closet in the apartment, so anything that doesn't need to always be conveniently available, I can just put in the closet.  
   
 Here's the bedroom.  
 
-![sketchup5](./sketchup5.jpg)
+![sketchup5](/images/blog/sketchup5.jpg)
 
-![sketchup6](./sketchup6.jpg)
+![sketchup6](/images/blog/sketchup6.jpg)
  
 The bedroom seemed small to me when I first looked at the floorplan and at the empty apartment, but now I've seen it in 3D with the furniture models, it's not so bad.  
   

@@ -19,7 +19,7 @@ The current iteration of this site is built using [Jekyll][5], which is a geek's
 
 So, here I am again.
 
-[1]:	../2017-03-31-revive
+[1]:	/blog/2017-03-31-revive
 [2]:	https://logicalwaste.blogspot.com
 [3]:	https://fichince.blogspot.com
 [4]:	https://albert-choi-p6sw.squarespace.com/
