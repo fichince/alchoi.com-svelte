@@ -1,4 +1,4 @@
-import type { RequestHandler } from './__types/[slug]';
+import type { RequestHandler } from './__types/index';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import matter from 'gray-matter';

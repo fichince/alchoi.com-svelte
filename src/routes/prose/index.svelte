@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  import type { Load } from './__types/prose';
+  import type { Load } from './__types/index';
 
   export const load: Load = async ({ props }) => {
     return {
@@ -12,7 +12,7 @@
 </script>
 
 <script lang="ts">
-  import Showcase from '../components/Showcase.svelte';
+  import Showcase from '../../components/Showcase.svelte';
   export let prose : any[];
 </script>
 

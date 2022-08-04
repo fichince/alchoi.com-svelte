@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
-  import type { Load } from './__types/[slug]';
-  import MD from '../../components/MD.svelte';
+  import type { Load } from './__types/index';
+  import MD from '../../../components/MD.svelte';
   import { DateTime } from 'luxon';
 
   export const load : Load = async ({ props }) => {
