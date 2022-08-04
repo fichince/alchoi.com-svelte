@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Deux Ex Machina and _The Da Vinci Code_
+title: Deus Ex Machina and _The Da Vinci Code_
 description: Crippled scholar
 date: 2006-05-29
 tags:
@@ -10,7 +10,7 @@ tags:
 
 Those who know me know that I don't like _The Da Vinci Code_. I've always maintained that I find the subject matter interesting, but the ridiculous plot and poor writing completely cancel that out. After recently seeing the [movie](http://www.imdb.com/title/tt0382625/), I have been able to better crystallize my criticisms of the story; i.e. it's much easier to see the crap when it's all condensed together in a short time frame. 
  
-One major annoyance that I had with the plot was the abundance of "[deux ex machina](http://en.wikipedia.org/wiki/Deus_ex_machina)" moments. These are moments in a story where the characters seem to be in a hopeless situation, but then something completely unexpected or unrealistic comes along to bail them out of it. This kind of plot device is okay if used in moderation, but it happens way too many times in _Da Vinci Code_. To wit: 
+One major annoyance that I had with the plot was the abundance of [deus ex machina](http://en.wikipedia.org/wiki/Deus_ex_machina) moments. These are moments in a story where the characters seem to be in a hopeless situation, but then something completely unexpected or unrealistic comes along to bail them out of it. This kind of plot device is okay if used in moderation, but it happens way too many times in _Da Vinci Code_. To wit: 
  
 (Spoilers ahead... although the spoilers basically amount to: they don't die.) 
  

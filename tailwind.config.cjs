@@ -35,6 +35,12 @@ module.exports = {
             'code::after': {
               content: 'none',
             },
+            'blockquote::before': {
+              content: 'none',
+            },
+            'blockquote::after': {
+              content: 'none',
+            },
           }
         }
       }),

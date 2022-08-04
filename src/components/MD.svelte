@@ -1,11 +1,20 @@
 <script lang="ts">
-  import { marked } from 'marked';
+  import { remark } from 'remark';
+  import remarkHtml from 'remark-html';
+  import remarkGfm from 'remark-gfm';
+  import remarkSmartypants from 'remark-smartypants';
 
   export let md : string = '';
 
-  let html : string;
+  $: html = 
+      remark()
+        .use(remarkHtml, { sanitize: false })
+        .use(remarkGfm)
+        .use(remarkSmartypants)
+        .process(md);
 
-  $: html = marked.parse(md.trim());
 </script>
 
-<div>{@html html}</div>
+{#await html then content}
+  {@html content}
+{/await}

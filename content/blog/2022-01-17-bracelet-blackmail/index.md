@@ -10,7 +10,7 @@ tags:
 
 _I wrote this piece circa 2012, after I took a trip to several countries in Asia. I was never able to get it published, so I figured I might as well post it here. I was reminded of it while reading a book by Jan Wong called_ [Beijing Confidential: A Tale of Comrades Lost and Found in the New Forbidden City][1]. _This piece feels to me like a less polished, smaller version of Wong's book, down to the slightly huffy subtitle._
 
-_I'm a bit conflicted about the tone of both this essay and_ Beijing Confidential_, about which more [later][2]._
+_I'm a bit conflicted about the tone of both this essay and_ Beijing Confidential, _about which more [later][2]._
 
 ---
 
