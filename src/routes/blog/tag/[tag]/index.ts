@@ -1,7 +1,7 @@
-import type { RequestHandler } from "@sveltejs/kit";
+import type { RequestHandler } from './__types/index';
 import { readBlogPosts } from '$lib/utils';
 
-export const GET : RequestHandler = async () => {
+export const GET : RequestHandler = async ({ params }) => {
 
   try {
 
@@ -10,7 +10,8 @@ export const GET : RequestHandler = async () => {
     return {
       status: 200,
       body: {
-        posts
+        posts: posts.filter((post) => post.tags?.includes(params.tag)),
+        tag: params.tag,
       }
     };
 

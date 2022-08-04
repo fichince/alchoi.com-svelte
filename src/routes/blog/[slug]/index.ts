@@ -3,7 +3,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import matter from 'gray-matter';
 
-const BLOG_ROOT = './content/blog';
+import { BLOG_ROOT } from '$lib/utils';
 
 export const GET : RequestHandler = async ({ params }) => {
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import NavLink from '../components/NavLink.svelte';
-  import MD from '../components/MD.svelte';
+  import NavLink from '$lib/components/NavLink.svelte';
+  import MD from '$lib/components/MD.svelte';
   import removeMd from 'remove-markdown';
 
   import { page } from '$app/stores';

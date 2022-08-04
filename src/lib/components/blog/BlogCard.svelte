@@ -1,10 +1,11 @@
 <script lang="ts">
   import MD from '../MD.svelte';
+  import Tags from './Tags.svelte';
   import { DateTime } from 'luxon';
 
   export let post : App.BlogPost;
 
-  const { slug, title, description, date } = post;
+  const { slug, title, description, date, tags } = post;
 
   const formattedDate = DateTime.fromISO(date).toLocaleString(DateTime.DATE_FULL);
 
@@ -28,6 +29,6 @@
     </div>
   </a>
   <div class="mt-2">
-    <!--<Tags tags={tags} />-->
+    <Tags tags={tags} />
   </div>
 </div>

@@ -12,7 +12,7 @@
 </script>
 
 <script lang="ts">
-  import Showcase from '../../components/Showcase.svelte';
+  import Showcase from '$lib/components/Showcase.svelte';
   export let prose : any[];
 </script>
 

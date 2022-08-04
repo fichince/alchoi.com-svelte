@@ -5,7 +5,7 @@
   export const load: Load = async ({ props }) => {
     return {
       stuff: {
-        pageTitle: 'Blog'
+        pageTitle: `Blog (${props.tag})`
       },
       props
     };
@@ -14,6 +14,7 @@
 
 <script lang="ts">
   export let posts : App.BlogPost[];
+  export let tag : string;
 </script>
 
-<BlogPostIndex {posts} />
+<BlogPostIndex {posts} selectedTag={tag} />
