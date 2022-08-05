@@ -1,5 +1,6 @@
 <script lang="ts">
-import MD from "./MD.svelte";
+  import MD from './MD.svelte';
+  import AOS from '$lib/components/AOS.svelte';
 
   export let item : {
     title?: string,
@@ -8,10 +9,13 @@ import MD from "./MD.svelte";
     url?: string
   } = {};
 
-  const { title, description, image, url } = item;
+  $: title = item.title;
+  $: description = item.description;
+  $: image = item.image;
+  $: url = item.url;
 </script>
 
-<article class="rounded-md
+<AOS as="article" class="rounded-md
   shadow-lg
   m-3 p-6 w-full sm:w-3/4
   justify-self-center self-center
@@ -36,4 +40,4 @@ import MD from "./MD.svelte";
       <MD md={description} />
     </div>
   </div>
-</article>
+</AOS>
