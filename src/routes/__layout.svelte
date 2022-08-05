@@ -84,7 +84,7 @@
 
 </div>
 
-<style global lang="postcss">
+<style lang="postcss">
   @import "@fontsource/special-elite";
   @import "@fontsource/crimson-pro";
   @import "@fontsource/crimson-pro/400-italic.css";

@@ -1,4 +1,7 @@
 <script lang="ts">
+  // TODO - I don't need to do this as a layout if it's only 
+  // used on the front page
+
   import { page } from '$app/stores';
 
   const title = 'Albert Choi';
@@ -28,6 +31,13 @@
 </div>
 
 <style lang="postcss">
+  @import "@fontsource/special-elite";
+  @import "@fontsource/mononoki";
+
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
   .homepage {
     background-image: url(/images/wedge-pond.jpg);
   }

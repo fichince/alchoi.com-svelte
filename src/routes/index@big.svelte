@@ -1,6 +1,10 @@
 <script context="module" lang="ts">
   import type { Load } from './__types/index@big';
 
+  // this page is entirely static with no JS interactivity needed
+  export const hydrate = false;
+  export const router = false;
+
   export const load: Load = async () => {
     return {
       stuff: {
