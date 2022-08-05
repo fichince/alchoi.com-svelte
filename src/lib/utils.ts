@@ -25,6 +25,10 @@ export const readBlogPosts = async () => {
 
         entries.push({
           ...data as App.BlogPost,
+
+          // convert to string, otherwise, it gets passed as a Date object 
+          // during prerendering
+          date: data.date.toISOString(),
           slug: dirent.name,
         });
       } finally {

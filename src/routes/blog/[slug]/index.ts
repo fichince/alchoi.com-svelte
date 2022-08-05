@@ -19,8 +19,12 @@ export const GET : RequestHandler = async ({ params }) => {
     const { data, content } = parsed;
 
     const post : App.BlogPost = {
+      ...data as App.BlogPost,
+
+      // convert to string, otherwise, it gets passed as a Date object 
+      // during prerendering
+      date: data.date.toISOString(),
       content,
-      ...data as App.BlogPost
     };
 
     return { 

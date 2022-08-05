@@ -5,9 +5,11 @@
 
   export let post : App.BlogPost;
 
-  const { slug, title, description, date, tags } = post;
-
-  const formattedDate = DateTime.fromISO(date).toLocaleString(DateTime.DATE_FULL);
+  $: slug = post.slug;
+  $: title = post.title;
+  $: description = post.description;
+  $: tags = post.tags;
+  $: formattedDate = DateTime.fromISO(post.date).toLocaleString(DateTime.DATE_FULL);
 
 </script>
 
