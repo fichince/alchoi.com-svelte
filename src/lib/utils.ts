@@ -3,6 +3,7 @@ import * as path from 'path';
 import matter from 'gray-matter';
 import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
+import { parse } from 'yaml';
 
 export const BLOG_ROOT = './content/blog';
 
@@ -38,4 +39,18 @@ export const readBlogPosts = async () => {
   }
 
   return reverse(sortBy(entries, 'date'))
+};
+
+export const readYaml = async (file : string) => {
+  let f = null;
+  try {
+    f = await fs.open(file);
+    const yaml = await f.readFile({ encoding: 'utf-8' });
+
+    const result = parse(yaml);
+    return result;
+
+  } finally {
+    await f?.close();
+  }
 };

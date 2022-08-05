@@ -1,0 +1,12 @@
+- title: Be Right Back!
+  url: https://julienaismith.com/app/
+  description: An app which aids in training dogs with separation anxiety
+  image: /images/code/dog.jpg
+- title: Pathways to Care
+  url: https://pathwaystocare.ca
+  description: Pathways to Care is a community-driven and youth-led systems change project committed to transforming the mental healthcare system for Black children, youth and their families
+  image: /images/code/ptc.jpg
+- title: RISE Cities
+  url: https://risecities.org
+  description: Sharing and supporting innovative and scalable solutions for resilient, intelligent, sustainable and equitable cities.
+  image: /images/code/city.jpg

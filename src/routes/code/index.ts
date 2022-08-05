@@ -3,11 +3,11 @@ import { readYaml } from '$lib/utils';
 
 export const GET : RequestHandler = async () => {
   try {
-    const prose = await readYaml('./content/pages/prose.yml');
+    const code = await readYaml('./content/pages/code.yml');
     return {
       status: 200,
       body: {
-        prose
+        code
       }
     };
 

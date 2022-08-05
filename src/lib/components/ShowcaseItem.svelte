@@ -20,18 +20,19 @@ import MD from "./MD.svelte";
   hover:scale-y-105 transition-all">
   <div class="mb-3 sm:mb-0 sm:mr-5">
     <a href={url} rel="noopener noreferrer" target="_blank">
-      <img src={image} alt={title} />
+      <img class="object-cover h-64 w-64"
+        src={image} alt={title} />
     </a>
   </div>
 
-  <div class="text-center flex-grow">
+  <div class="text-center w-4/5">
     <div class="text-xl sm:text-2xl lg:text-3xl mb-1 font-display">
       <a href={url} rel="noopener noreferrer" target="_blank">
         <MD md={title} />
       </a>
     </div>
 
-    <div class="text-sm">
+    <div class="font-body">
       <MD md={description} />
     </div>
   </div>
