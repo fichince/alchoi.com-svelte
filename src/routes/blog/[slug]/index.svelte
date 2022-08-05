@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
   import type { Load } from './__types/index';
   import MD from '$lib/components/MD.svelte';
+  import Tags from '$lib/components/blog/Tags.svelte';
   import { DateTime } from 'luxon';
 
   export const load : Load = async ({ props }) => {
@@ -20,6 +21,7 @@
   $: description = post.description;
   $: formattedDate = DateTime.fromISO(post.date).toLocaleString(DateTime.DATE_FULL);
   $: content = post.content;
+  $: tags = post.tags;
 
 </script>
 
@@ -35,7 +37,7 @@
       {formattedDate}
     </div>
     <div class="mt-2 flex justify-center lg:justify-end">
-      <!--<Tags tags={tags} />-->
+      <Tags tags={tags} />
     </div>
   </div>
 
