@@ -2,14 +2,22 @@
   import MD from '../MD.svelte';
   import Tags from './Tags.svelte';
   import { DateTime } from 'luxon';
+  import { inview } from 'svelte-inview';
 
   export let post : App.BlogPost;
+
+  let shouldShow : boolean;
 
   $: slug = post.slug;
   $: title = post.title;
   $: description = post.description;
   $: tags = post.tags;
   $: formattedDate = DateTime.fromISO(post.date).toLocaleString(DateTime.DATE_FULL);
+
+  const handleChange = (event : any) => {
+    const { detail: { inView } } = event;
+    shouldShow = inView;
+  };
 
 </script>
 
@@ -19,7 +27,11 @@
   m-3 p-5
   bg-tertiary
   hover:scale-y-105
-  transition-all">
+  transition-transform"
+  use:inview 
+  on:change={handleChange} 
+  class:show={shouldShow}
+  class:hide={!shouldShow}>
   <a href={`/blog/${slug}`}>
     <div class="text-2xl text-accent font-display">
       <MD md={title} />
@@ -34,3 +46,12 @@
     <Tags tags={tags} />
   </div>
 </div>
+
+<style lang="postcss">
+  .hide {
+    @apply opacity-0 transition-opacity duration-1000;
+  }
+  .show {
+    @apply opacity-100 transition-opacity duration-1000;
+  }
+</style>
