@@ -11,7 +11,7 @@
   };
 
   const options = {
-    rootMargin: '-20%',
+    rootMargin: '0px 0px -10% 0px',
   };
 
 </script>

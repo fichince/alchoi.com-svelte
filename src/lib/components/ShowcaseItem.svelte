@@ -21,7 +21,7 @@
   justify-self-center self-center
   flex flex-col sm:flex-row 
   items-center bg-tertiary
-  hover:scale-y-105 transition-all">
+  hover:animate-bump">
   <div class="mb-3 sm:mb-0 sm:mr-5">
     <a href={url} rel="noopener noreferrer" target="_blank">
       <img class="object-cover h-64 w-64"

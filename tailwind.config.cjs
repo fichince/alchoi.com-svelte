@@ -52,11 +52,17 @@ module.exports = {
         'blur-in': {
           '0%': { filter: 'grayscale(100%)' },
           '100%': { filter: 'grayscale(0%) blur(4px)' },
+        },
+        'bump': {
+          '0%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+          '100%': { transform: 'translateY(0)' },
         }
       },
       animation: {
         'fade-in': 'fade-in 2s ease-in-out',
         'blur-in': 'blur-in 6s ease-in-out',
+        'bump': 'bump 0.2s ease-in-out',
       }
     },
   },

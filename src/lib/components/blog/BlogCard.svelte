@@ -19,8 +19,7 @@
   w-full sm:w-1/2
   m-3 p-5
   bg-tertiary
-  hover:scale-y-105
-  transition-transform">
+  hover:animate-bump">
   <a href={`/blog/${slug}`}>
     <div class="text-2xl text-accent font-display">
       <MD md={title} />
