@@ -3,6 +3,7 @@
   import MD from '$lib/components/MD.svelte';
   import Tags from '$lib/components/blog/Tags.svelte';
   import { DateTime } from 'luxon';
+  import { fade } from 'svelte/transition';
 
   export const load : Load = async ({ props }) => {
     const { post: { title } } = props;
@@ -26,7 +27,7 @@
 </script>
 
 <div class="mx-auto flex flex-col w-full
-  lg:flex-row lg:w-3/4">
+  lg:flex-row lg:w-3/4" in:fade>
 
   <div class="w-full lg:w-1/3 lg:mr-4 lg:ml-2
     text-center lg:text-right lg:pr-10">
@@ -37,7 +38,7 @@
       {formattedDate}
     </div>
     <div class="mt-2 flex justify-center lg:justify-end">
-      <Tags tags={tags} />
+      <Tags tags={tags} animate />
     </div>
   </div>
 

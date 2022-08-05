@@ -57,12 +57,18 @@ module.exports = {
           '0%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-5px)' },
           '100%': { transform: 'translateY(0)' },
+        },
+        'bump-small': {
+          '0%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-1px)' },
+          '100%': { transform: 'translateY(0)' },
         }
       },
       animation: {
         'fade-in': 'fade-in 2s ease-in-out',
         'blur-in': 'blur-in 6s ease-in-out',
         'bump': 'bump 0.2s ease-in-out',
+        'bump-small': 'bump-small 0.1s ease-in-out',
       }
     },
   },

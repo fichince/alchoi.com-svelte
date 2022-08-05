@@ -10,7 +10,7 @@
   const liClasses = `
     before:mx-1 before:content-['⋅'] 
     last:after:content-['⋅'] last:after:mx-1
-    text-accent
+    text-accent hover:animate-bump-small
   `;
 
   $: allTags = 
