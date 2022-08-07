@@ -22,7 +22,7 @@ export const readBlogPosts = async () => {
         f = await fs.open(path.join(BLOG_ROOT, dirent.name, 'index.md'));
         const contents = await f.readFile({ encoding: 'utf-8' });
 
-        const { data } = matter(contents);
+        const { data, content } = matter(contents);
 
         entries.push({
           ...data as App.BlogPost,
@@ -31,6 +31,7 @@ export const readBlogPosts = async () => {
           // during prerendering
           date: data.date.toISOString(),
           slug: dirent.name,
+          content,
         });
       } finally {
         await f?.close();

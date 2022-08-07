@@ -16,4 +16,4 @@
   export let posts : App.BlogPost[];
 </script>
 
-<BlogPostIndex {posts} />
+<BlogPostIndex {posts} hasSearch />
