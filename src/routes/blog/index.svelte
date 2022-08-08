@@ -15,13 +15,15 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import { browser } from '$app/env';
-  import Fuse from 'fuse.js';
+  //import Fuse from 'fuse.js';
+  import lunr from 'lunr';
 
   export let posts : App.BlogPost[];
 
   if (browser) {
     console.log('Initializing context');
 
+    /*
     const fuseOpts = {
       keys: [ 'description', 'title', 'content' ],
       minMatchCharLength: 3,
@@ -33,7 +35,19 @@
     };
 
     const fuse = new Fuse(posts, fuseOpts);
-    setContext('search', { fuse });
+    */
+    const search = lunr(function() {
+      this.ref('slug');
+      this.field('title');
+      this.field('description');
+      this.field('content');
+      this.metadataWhitelist = ['position'];
+
+      posts.forEach(function (post) {
+        this.add(post);
+      }, this);
+    });
+    setContext('search', { search });
   }
 
 </script>

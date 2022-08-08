@@ -1,20 +1,32 @@
-<script lang="ts">
-  export let result;
+<script>
+  import each from 'lodash/each';
 
-  console.log('here', result.item.title);
+  export let result;
+  export let post;
+
+  $: console.log('search result', result.ref);
 
   $: {
-    result.matches.forEach((match) => {
-      const { key, value, indices } = match;
+    const { matchData: { metadata } } = result;
+    each(metadata, (data) => {
+      each(data, (value, key) => {
 
-      indices.forEach((index) => {
-        const [ first, second ] = index;
-        const sub = value.substring(Math.max(0, first - 10), Math.min(second + 10, value.length));
-        console.log('index', index, sub);
+        const str = post[key];
+        const { position } = value;
+
+        each(position, (pos) => {
+          const [ start, length ] = pos;
+          const sub = str.substring(
+            Math.max(0, start - 10), 
+            Math.min(start + length + 10, str.length)
+          );
+          console.log(`found in ${key}`, pos, sub);
+        });
+
       });
 
-
     });
+
   }
 
 </script>

@@ -3,9 +3,11 @@
 
   import { getContext } from 'svelte';
   import debounce from 'lodash/debounce';
-  import map from 'lodash/map';
+  import find from 'lodash/find';
 
-  const { fuse } = getContext('search');
+  const { search } = getContext('search');
+
+  export let posts : App.BlogPost[] = [];
 
   let searchTerm : string;
   let searchResults : any[] = [];
@@ -16,7 +18,8 @@
 
   $: {
     if (searchTerm) {
-      searchResults = fuse.search(searchTerm);
+      console.log('search', searchTerm);
+      searchResults = search.search(searchTerm);
     } else {
       searchResults = [];
     }
@@ -28,5 +31,6 @@
   class="border rounded-md border-accent" />
 
 {#each searchResults as result}
-  <SearchResult {result} />
+  {@const post = find(posts, { slug: result.ref })}
+  <SearchResult {result} {post} />
 {/each}
