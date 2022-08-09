@@ -40,7 +40,7 @@
 		"remark-gfm": "^3.0.1",
 		"remark-html": "^15.0.1",
 		"remark-smartypants": "^2.0.0",
-		"remove-markdown": "^0.5.0",
+		"strip-markdown": "^5.0.0",
 		"svelte": "^3.44.0",
 		"svelte-awesome": "^3.0.0",
 		"svelte-check": "^2.7.1",

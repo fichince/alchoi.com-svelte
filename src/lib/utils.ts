@@ -4,8 +4,14 @@ import matter from 'gray-matter';
 import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
 import { parse } from 'yaml';
+import { remark } from 'remark';
+import strip from 'strip-markdown';
 
 export const BLOG_ROOT = './content/blog';
+
+export const stripMarkdown = (md : string) : string => {
+  return remark().use(strip).processSync(md).toString().trim();
+};
 
 export const readBlogPosts = async () => {
   let dir = null;

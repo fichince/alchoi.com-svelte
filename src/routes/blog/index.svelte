@@ -15,7 +15,9 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import { browser } from '$app/env';
-  //import Fuse from 'fuse.js';
+  import mapValues from 'lodash/mapValues';
+  import { stripMarkdown } from '$lib/utils';
+
   import lunr from 'lunr';
   import type { Index } from 'lunr';
 
@@ -24,19 +26,6 @@
   if (browser) {
     console.log('Initializing context');
 
-    /*
-    const fuseOpts = {
-      keys: [ 'description', 'title', 'content' ],
-      minMatchCharLength: 3,
-      findAllMatches: true,
-      threshold: 0.15,
-      includeScore: true,
-      includeMatches: true,
-      ignoreLocation: true,
-    };
-
-    const fuse = new Fuse(posts, fuseOpts);
-    */
     const search : Index = lunr(function() {
       this.ref('slug');
       this.field('title');
@@ -45,15 +34,10 @@
       this.metadataWhitelist = ['position'];
 
       for (let post of posts) {
-        this.add(post);
+        this.add(mapValues(post, stripMarkdown));
       }
-
-      /*
-      posts.forEach(function (post) {
-        this.add(post);
-      }, this);
-      */
     });
+
     setContext<{ search : Index }>('search', { search });
   }
 

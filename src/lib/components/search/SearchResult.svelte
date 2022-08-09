@@ -4,6 +4,7 @@
   import take from 'lodash/take';
 
   import type { Index } from 'lunr';
+  import { stripMarkdown } from '$lib/utils';
 
   export let result : Index.Result;
   export let post : App.BlogPost;
@@ -17,16 +18,17 @@
     const result : string[] = [];
     if (!positions) return result;
 
+    const src = stripMarkdown(source);
+
     for (let pos of positions.position) {
       const [ matchStart, matchLength ] = pos;
 
-      const start = clamp(matchStart - 10, 0, source.length);
-      const end = clamp(matchStart + matchLength + 10, 0, source.length);
+      const start = clamp(matchStart - 10, 0, src.length);
+      const end = clamp(matchStart + matchLength + 10, 0, src.length);
 
-      const str = source.substring(start, end);
+      const str = src.substring(start, end);
 
-      //const hlStart = Math.min(10, matchStart - start);
-      //const hlEnd = clamp(10 + matchLength, source.length);
+      // todo, I need to extract the highlights from here after all because of inexact matches
 
       result.push(str);
     }
@@ -48,6 +50,7 @@
     const before = match.substring(0, index);
     const highlight = match.substring(index, index + searchTerm.length);
     const after = match.substring(index + searchTerm.length);
+
     return { before, highlight, after };
   };
 
@@ -69,16 +72,18 @@
 
   $: bodyMatches = take([...descriptionMatches, ...contentMatches], 4);
 
+  $: title = stripMarkdown(post.title);
+
 </script>
 
 <div class="p-2 border border-gray-700">
   {#if titleMatches.length > 0}
-    { @const { before, highlight, after } = highlightSearch(post.title) || {} }
+    { @const { before, highlight, after } = highlightSearch(title) || {} }
     <span>{before}</span>
     <mark>{highlight}</mark>
     <span>{after}</span>
   {:else}
-    <span>{post.title}</span>
+    <span>{title}</span>
   {/if}
 
   {#if bodyMatches.length > 0}
