@@ -27,6 +27,8 @@ export const GET : RequestHandler = async ({ params }) => {
       content,
     };
 
+    console.log(`Loaded ${data.title}`);
+
     return { 
       status: 200,
       body: {

@@ -8,6 +8,7 @@
 
   $: {
     const { matchData: { metadata } } = result;
+    const titleMatches = data.title;
     each(metadata, (data) => {
       each(data, (value, key) => {
 

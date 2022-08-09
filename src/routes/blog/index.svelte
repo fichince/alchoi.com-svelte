@@ -43,9 +43,15 @@
       this.field('content');
       this.metadataWhitelist = ['position'];
 
+      for (let post of posts) {
+        this.add(post);
+      }
+
+      /*
       posts.forEach(function (post) {
         this.add(post);
       }, this);
+      */
     });
     setContext('search', { search });
   }
