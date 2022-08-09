@@ -17,6 +17,7 @@
   import { browser } from '$app/env';
   //import Fuse from 'fuse.js';
   import lunr from 'lunr';
+  import type { Index } from 'lunr';
 
   export let posts : App.BlogPost[];
 
@@ -36,7 +37,7 @@
 
     const fuse = new Fuse(posts, fuseOpts);
     */
-    const search = lunr(function() {
+    const search : Index = lunr(function() {
       this.ref('slug');
       this.field('title');
       this.field('description');
@@ -53,7 +54,7 @@
       }, this);
       */
     });
-    setContext('search', { search });
+    setContext<{ search : Index }>('search', { search });
   }
 
 </script>

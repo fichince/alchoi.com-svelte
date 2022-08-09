@@ -4,13 +4,14 @@
   import { getContext } from 'svelte';
   import debounce from 'lodash/debounce';
   import find from 'lodash/find';
+  import type { Index } from 'lunr';
 
-  const { search } = getContext('search');
+  const { search } = getContext<{ search: Index }>('search');
 
   export let posts : App.BlogPost[] = [];
 
   let searchTerm : string;
-  let searchResults : any[] = [];
+  let searchResults : Index.Result[] = [];
 
   const handleChange = debounce((e) => {
     searchTerm = e.target.value;
@@ -32,5 +33,7 @@
 
 {#each searchResults as result}
   {@const post = find(posts, { slug: result.ref })}
-  <SearchResult {result} {post} />
+  {#if post}
+    <SearchResult {result} {post} {searchTerm} />
+  {/if}
 {/each}
