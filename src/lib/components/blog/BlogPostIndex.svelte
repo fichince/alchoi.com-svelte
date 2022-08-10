@@ -5,6 +5,10 @@
   import Modal, { bind } from 'svelte-simple-modal';
   import { writable } from 'svelte/store';
   import { browser } from '$app/env'
+  import { setContext } from 'svelte';
+  import { createSearchIndex } from '$lib/utils';
+
+  import type { Index } from 'lunr';
 
   const modal = writable(null);
 
@@ -14,6 +18,10 @@
   let searchResults : number[] = [];
   let initialPosts : App.BlogPost[] = posts;
   let selectedPosts : App.BlogPost[];
+
+  if (browser) {
+    setContext<Index>('search', createSearchIndex(posts));
+  }
 
   const handleSearchResults = (e : any) => {
     searchResults = e.detail;

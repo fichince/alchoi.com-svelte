@@ -13,18 +13,7 @@
 </script>
 
 <script lang="ts">
-  import { setContext } from 'svelte';
-  import { browser } from '$app/env';
-  import { createSearchIndex } from '$lib/utils';
-
-  import type { Index } from 'lunr';
-
   export let posts : App.BlogPost[];
-
-  if (browser) {
-    setContext<Index>('search', createSearchIndex(posts));
-  }
-
 </script>
 
 <BlogPostIndex {posts} />
