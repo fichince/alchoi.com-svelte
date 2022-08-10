@@ -6,7 +6,7 @@
   import find from 'lodash/find';
   import type { Index } from 'lunr';
 
-  const { search } = getContext<{ search: Index }>('search');
+  const search = getContext<Index>('search');
 
   export let posts : App.BlogPost[] = [];
 

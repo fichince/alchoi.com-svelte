@@ -10,7 +10,6 @@
 
   export let posts : App.BlogPost[] = [];
   export let selectedTag : string = '';
-  export let hasSearch : boolean = false;
 
   let searchResults : number[] = [];
   let initialPosts : App.BlogPost[] = posts;

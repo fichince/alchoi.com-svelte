@@ -6,10 +6,14 @@ import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
 import clamp from 'lodash/clamp';
 import map from 'lodash/map';
+import mapValues from 'lodash/mapValues';
 
 import { parse } from 'yaml';
 import { remark } from 'remark';
 import strip from 'strip-markdown';
+
+import type { Index } from 'lunr';
+import lunr from 'lunr';
 
 export const BLOG_ROOT = './content/blog';
 
@@ -94,4 +98,20 @@ export const extractHighlights =
   });
 
   return result;
+};
+
+export const createSearchIndex = (posts : App.BlogPost[]) : Index => {
+  const idx : Index = lunr(function() {
+    this.ref('slug');
+    this.field('title');
+    this.field('description');
+    this.field('content');
+    this.metadataWhitelist = ['position'];
+
+    for (let post of posts) {
+      this.add(mapValues(post, stripMarkdown));
+    }
+  });
+
+  return idx;
 };

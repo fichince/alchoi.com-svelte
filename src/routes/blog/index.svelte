@@ -15,32 +15,16 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import { browser } from '$app/env';
-  import mapValues from 'lodash/mapValues';
-  import { stripMarkdown } from '$lib/utils';
+  import { createSearchIndex } from '$lib/utils';
 
-  import lunr from 'lunr';
   import type { Index } from 'lunr';
 
   export let posts : App.BlogPost[];
 
   if (browser) {
-    console.log('Initializing context');
-
-    const search : Index = lunr(function() {
-      this.ref('slug');
-      this.field('title');
-      this.field('description');
-      this.field('content');
-      this.metadataWhitelist = ['position'];
-
-      for (let post of posts) {
-        this.add(mapValues(post, stripMarkdown));
-      }
-    });
-
-    setContext<{ search : Index }>('search', { search });
+    setContext<Index>('search', createSearchIndex(posts));
   }
 
 </script>
 
-<BlogPostIndex {posts} hasSearch />
+<BlogPostIndex {posts} />
