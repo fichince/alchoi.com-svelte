@@ -1,8 +1,12 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import matter from 'gray-matter';
+
 import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
+import clamp from 'lodash/clamp';
+import map from 'lodash/map';
+
 import { parse } from 'yaml';
 import { remark } from 'remark';
 import strip from 'strip-markdown';
@@ -60,4 +64,34 @@ export const readYaml = async (file : string) => {
   } finally {
     await f?.close();
   }
+};
+
+const HL_CONTEXT = 15;
+export const extractHighlights = 
+  (source : string, positions? : App.MatchPositions) : 
+  App.Highlight[] => {
+
+  if (!positions) return [];
+
+  const src = stripMarkdown(source);
+
+  const result = map(positions.position, (pos) : App.Highlight => {
+    const [ matchStart, matchLength ] = pos;
+
+    const start = clamp(matchStart - HL_CONTEXT, 0, src.length);
+    const end = clamp(matchStart + matchLength + HL_CONTEXT, 0, src.length);
+
+    const str = src.substring(start, end);
+
+    const shift = matchStart - HL_CONTEXT;
+    const hlStart = shift > 0 ? HL_CONTEXT : HL_CONTEXT + shift;
+
+    const before = str.substring(0, hlStart);
+    const highlight = str.substring(hlStart, hlStart + matchLength);
+    const after = str.substring(hlStart + matchLength);
+
+    return { before, highlight, after };
+  });
+
+  return result;
 };

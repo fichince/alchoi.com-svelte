@@ -31,10 +31,10 @@ declare namespace App {
     content?: MatchPositions,
   }
 
-  type MatchDisplay = {
-    str: string,
-    hlStart: number,
-    hlEnd: number,
-  }
+  type Highlight = {
+    before?: string,
+    highlight?: string,
+    after?: string,
+  };
 
 }

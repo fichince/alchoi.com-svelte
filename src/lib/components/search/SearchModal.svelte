@@ -34,6 +34,6 @@
 {#each searchResults as result}
   {@const post = find(posts, { slug: result.ref })}
   {#if post}
-    <SearchResult {result} {post} {searchTerm} />
+    <SearchResult {result} {post} />
   {/if}
 {/each}
