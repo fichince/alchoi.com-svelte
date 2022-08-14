@@ -1,7 +1,7 @@
 <script lang="ts">
   import NavLink from '$lib/components/NavLink.svelte';
   import MD from '$lib/components/MD.svelte';
-  import removeMd from 'remove-markdown';
+  import { stripMarkdown } from '$lib/utils';
 
   import { page } from '$app/stores';
 
@@ -36,7 +36,7 @@
 
   $: {
     titleBar = (pageTitle ? `${pageTitle} | ` : '') + title;
-    titleBar = removeMd(titleBar);
+    titleBar = stripMarkdown(titleBar);
   }
 
 </script>

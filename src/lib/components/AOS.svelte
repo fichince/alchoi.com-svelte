@@ -27,9 +27,9 @@
 
 <style lang="postcss">
   .hide {
-    @apply opacity-0 transition-opacity duration-1000;
+    @apply opacity-0 transition-opacity duration-700;
   }
   .show {
-    @apply opacity-100 transition-opacity duration-1000;
+    @apply opacity-100 transition-opacity duration-700;
   }
 </style>
