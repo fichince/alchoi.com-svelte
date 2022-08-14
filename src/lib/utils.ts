@@ -72,7 +72,7 @@ export const readYaml = async (file : string) => {
 
 const HL_CONTEXT = 15;
 export const extractHighlights = 
-  (source : string, positions? : App.MatchPositions) : 
+  (source : string, positions? : App.MatchPositions, includeFull? : boolean) : 
   App.Highlight[] => {
 
   if (!positions) return [];
@@ -82,19 +82,30 @@ export const extractHighlights =
   const result = map(positions.position, (pos) : App.Highlight => {
     const [ matchStart, matchLength ] = pos;
 
-    const start = clamp(matchStart - HL_CONTEXT, 0, src.length);
-    const end = clamp(matchStart + matchLength + HL_CONTEXT, 0, src.length);
+    if (!includeFull) {
+      const start = clamp(matchStart - HL_CONTEXT, 0, src.length);
+      const end = clamp(matchStart + matchLength + HL_CONTEXT, 0, src.length);
 
-    const str = src.substring(start, end);
+      const str = src.substring(start, end);
 
-    const shift = matchStart - HL_CONTEXT;
-    const hlStart = shift > 0 ? HL_CONTEXT : HL_CONTEXT + shift;
+      const shift = matchStart - HL_CONTEXT;
+      const hlStart = shift > 0 ? HL_CONTEXT : HL_CONTEXT + shift;
 
-    const before = str.substring(0, hlStart);
-    const highlight = str.substring(hlStart, hlStart + matchLength);
-    const after = str.substring(hlStart + matchLength);
+      const before = str.substring(0, hlStart);
+      const highlight = str.substring(hlStart, hlStart + matchLength);
+      const after = str.substring(hlStart + matchLength);
 
-    return { before, highlight, after };
+      return { before, highlight, after };
+    } else {
+      const start = 0;
+      const end = src.length;
+
+      const before = src.substring(0, matchStart);
+      const highlight = src.substring(matchStart, matchStart + matchLength);
+      const after = src.substring(matchStart + matchLength);
+
+      return { before, highlight, after };
+    }
   });
 
   return result;

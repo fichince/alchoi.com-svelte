@@ -53,7 +53,10 @@
 
   <!-- this can't be prerendered -->
   {#if browser}
-    <Modal show={$modal} />
+    <Modal 
+      show={$modal} 
+      styleWindow={{ height: '500px' }}
+    />
   {/if}
 
   <button on:click={showModal}>Search</button>

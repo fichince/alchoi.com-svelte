@@ -49,5 +49,16 @@ describe('Some utils tests', () => {
       expect(fifth).to.have.property('after', '');
 
     });
+
+    it('should return full string with highlights', () => {
+      const result = extractHighlights(source, { position: [
+        [ source.indexOf('search'), 'search'.length ], // middle of the string
+      ]}, true);
+
+      const [ first ] = result;
+      expect(first).to.have.property('before', 'this is some content that we would ');
+      expect(first).to.have.property('highlight', 'search');
+      expect(first).to.have.property('after', ' and then highlight the found results');
+    });
   });
 });
