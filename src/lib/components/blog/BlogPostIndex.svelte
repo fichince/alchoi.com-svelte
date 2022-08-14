@@ -7,6 +7,8 @@
   import { browser } from '$app/env'
   import { setContext } from 'svelte';
   import { createSearchIndex } from '$lib/utils';
+  import Icon from 'svelte-awesome';
+  import search from 'svelte-awesome/icons/search';
 
   import type { Index } from 'lunr';
 
@@ -15,17 +17,11 @@
   export let posts : App.BlogPost[] = [];
   export let selectedTag : string = '';
 
-  let searchResults : number[] = [];
-  let initialPosts : App.BlogPost[] = posts;
-  let selectedPosts : App.BlogPost[];
+  let selectedPosts : App.BlogPost[] = posts;
 
   if (browser) {
     setContext<Index>('search', createSearchIndex(posts));
   }
-
-  const handleSearchResults = (e : any) => {
-    searchResults = e.detail;
-  };
 
   const showModal = () => {
     modal.set(bind(SearchModal, { posts }));
@@ -33,33 +29,29 @@
 
   $: {
     if (selectedTag) {
-      initialPosts = posts.filter((p) => p.tags?.includes(selectedTag));
-    }
-  }
-
-  $: {
-    if (searchResults.length > 0) {
-      selectedPosts = searchResults.map((index) => initialPosts[index]);
-    } else {
-      selectedPosts = initialPosts;
+      selectedPosts = posts.filter((p) => p.tags?.includes(selectedTag));
     }
   }
 
 </script>
 
+<!-- this can't be prerendered -->
+{#if browser}
+  <Modal 
+    show={$modal} 
+    styleWindow={{ height: '500px' }}
+  />
+{/if}
+
 <div class="flex flex-col items-center">
-  <TagChooser {selectedTag} {posts} />
-  <!--<SearchBar posts={initialPosts} on:search={handleSearchResults} />-->
 
-  <!-- this can't be prerendered -->
-  {#if browser}
-    <Modal 
-      show={$modal} 
-      styleWindow={{ height: '500px' }}
-    />
-  {/if}
-
-  <button on:click={showModal}>Search</button>
+  <div class="flex items-baseline my-2">
+    <TagChooser {selectedTag} {posts} />
+    <button on:click={showModal} aria-label="search" 
+      class="hover:animate-bump-small">
+      <Icon data={search} scale={1} />
+    </button>
+  </div>
 
   {#each selectedPosts as post (post.slug)}
     <BlogCard {post} />
