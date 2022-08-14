@@ -20,7 +20,6 @@
 
   $: {
     if (searchTerm) {
-      console.log('search', searchTerm);
       searchResults = search.search(searchTerm);
     } else {
       searchResults = [];
