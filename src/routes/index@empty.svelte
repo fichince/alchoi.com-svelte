@@ -10,8 +10,25 @@
   import facebookSquare from 'svelte-awesome/icons/facebookSquare';
   import linkedinSquare from 'svelte-awesome/icons/linkedinSquare';
   import CoolBackground from '$lib/components/CoolBackground.svelte';
+
+  const pageTitle = 'Albert Choi';
+  const metaDescription = 'The homepage of Albert Choi';
 </script>
 
+<svelte:head>
+  <title>{pageTitle}</title>
+  <meta name="description" content={metaDescription} />
+
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={metaDescription} />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://alchoi.com/favicon.png" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={metaDescription} />
+  <meta name="twitter:image" content="https://alchoi.com/favicon.png" />
+</svelte:head>
 
 <CoolBackground animate>
   <div class="
