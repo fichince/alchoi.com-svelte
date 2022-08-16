@@ -30,14 +30,13 @@
     expanded = !expanded;
   };
 
-  $: pageTitle = $page.stuff.pageTitle;
+  $: pageTitle = stripMarkdown($page.stuff.pageTitle);
+  $: description = stripMarkdown($page.stuff.description);
+  $: metaDescription = `${pageTitle} - ${description}`;
 
   $: expanded = innerWidth > 640;
 
-  $: {
-    titleBar = (pageTitle ? `${pageTitle} | ` : '') + title;
-    titleBar = stripMarkdown(titleBar);
-  }
+  $: titleBar = (pageTitle ? `${pageTitle} | ` : '') + title;
 
 </script>
 
@@ -45,6 +44,17 @@
 
 <svelte:head>
   <title>{titleBar}</title>
+  <meta name="description" content={metaDescription} />
+
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={metaDescription} />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://alchoi.com/favicon.png" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={metaDescription} />
+  <meta name="twitter:image" content="https://alchoi.com/favicon.png" />
 </svelte:head>
 
 <div class="m-auto">

@@ -6,10 +6,16 @@
   import { fade } from 'svelte/transition';
 
   export const load : Load = async ({ props }) => {
-    const { post: { title } } = props;
+    const { 
+      post: { 
+        title, description
+      } 
+    } = props;
+
     return {
       stuff: {
         pageTitle: title,
+        description
       },
       props
     }
