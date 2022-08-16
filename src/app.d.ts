@@ -20,4 +20,21 @@ declare namespace App {
     tags?: string[],
     content?: string,
   }
+
+  type MatchPositions = {
+    position: number[][];
+  }
+
+  type SearchResultMetadata = {
+    title?: MatchPositions,
+    description?: MatchPositions,
+    content?: MatchPositions,
+  }
+
+  type Highlight = {
+    before?: string,
+    highlight?: string,
+    after?: string,
+  };
+
 }
