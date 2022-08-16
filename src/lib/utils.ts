@@ -17,7 +17,8 @@ import lunr from 'lunr';
 
 export const BLOG_ROOT = './content/blog';
 
-export const stripMarkdown = (md : string) : string => {
+export const stripMarkdown = (md : string | undefined) : string => {
+  if (!md) return '';
   return remark().use(strip).processSync(md).toString().trim();
 };
 

@@ -9,6 +9,7 @@ declare namespace App {
   // interface Session {}
   interface Stuff {
     pageTitle? : string;
+    description? : string;
     animate? : boolean;
   }
 
