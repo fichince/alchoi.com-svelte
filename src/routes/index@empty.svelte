@@ -61,7 +61,7 @@
       <a href="/prose">Prose</a>
     </div>
     <div class="hover:scale-110">
-      <a href="/">Code</a>
+      <a href="/code">Code</a>
     </div>
   </div>
 
