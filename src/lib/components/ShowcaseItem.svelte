@@ -2,17 +2,13 @@
   import MD from './MD.svelte';
   import AOS from '$lib/components/AOS.svelte';
 
-  export let item : {
-    title?: string,
-    description?: string,
-    image?: string,
-    url?: string
-  } = {};
+  export let item : App.ShowcaseItem;
 
   $: title = item.title;
   $: description = item.description;
   $: image = item.image;
   $: url = item.url;
+  $: excerpt = item.excerpt;
 </script>
 
 <AOS as="article" class="rounded-md
@@ -39,5 +35,12 @@
     <div class="font-body">
       <MD md={description} />
     </div>
+
+    {#if excerpt}
+    <br />
+    <div class="font-body">
+      <MD md={excerpt} />
+    </div>
+    {/if}
   </div>
 </AOS>

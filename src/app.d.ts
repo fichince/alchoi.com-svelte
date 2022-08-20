@@ -38,4 +38,12 @@ declare namespace App {
     after?: string,
   };
 
+  type ShowcaseItem = {
+    title: string,
+    description: string,
+    image?: string,
+    url?: string,
+    excerpt?: string,
+  };
+
 }
