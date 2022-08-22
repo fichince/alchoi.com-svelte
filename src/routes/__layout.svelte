@@ -30,6 +30,17 @@
     expanded = !expanded;
   };
 
+  const toggleDark = () => {
+    console.log('here', localStorage.getItem('theme'));
+    if (localStorage.getItem('theme') === 'dark') {
+      localStorage.setItem('theme', 'light');
+      document.documentElement.classList.remove('dark');
+    } else {
+      localStorage.setItem('theme', 'dark');
+      document.documentElement.classList.add('dark');
+    }
+  };
+
   $: pageTitle = stripMarkdown($page.stuff.pageTitle);
   $: description = stripMarkdown($page.stuff.description);
   $: metaDescription = `${pageTitle} - ${description}`;
@@ -57,8 +68,8 @@
   <meta name="twitter:image" content="https://alchoi.com/favicon.png" />
 </svelte:head>
 
-<div class="m-auto">
-  <nav class="relative select-none bg-accent sm:flex sm:items-stretch w-full text-lg sm:text-xl">
+<div class="m-auto min-h-screen bg-primary dark:bg-primary-dark">
+  <nav class="relative select-none bg-accent dark:bg-accent-dark sm:flex sm:items-stretch w-full text-lg sm:text-xl">
     <div class="flex flex-no-shrink items-stretch h-12">
       <NavLink to="/" name={title} />
       <button class="block sm:hidden cursor-pointer ml-auto relative w-12 h-12 p-4" on:click={toggleExpanded}>
@@ -77,15 +88,16 @@
         {/each}
         </div>
       </div>
+      <button on:click={toggleDark}>Toggle</button>
     {/if}
   </nav>
 
   <main class="pt-10 pb-20 px-5">
     {#if pageTitle}
-    <div class="mt-3 sm:mt-5 mx-auto text-3xl sm:text-5xl text-center text-accent font-display">
+    <div class="mt-3 sm:mt-5 mx-auto text-3xl sm:text-5xl text-center text-accent dark:text-accent-dark font-display">
       <MD md={pageTitle} />
     </div>
-    <hr class="my-4 mx-auto w-full sm:w-3/4 text-center border-accent" />
+    <hr class="my-4 mx-auto w-full sm:w-3/4 text-center border-accent dark:border-accent-dark" />
     {/if}
 
     <slot></slot>

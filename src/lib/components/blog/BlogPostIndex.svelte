@@ -49,7 +49,9 @@
     <TagChooser {selectedTag} {posts} />
     <button on:click={showModal} aria-label="search" 
       class="hover:animate-bump-small">
-      <Icon data={search} scale={1} />
+      <div class="text-accent dark:text-accent-dark">
+        <Icon data={search} scale={1}/>
+      </div>
     </button>
   </div>
 

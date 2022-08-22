@@ -37,10 +37,10 @@
 
   <div class="w-full lg:w-1/3 lg:mr-4 lg:ml-2
     text-center lg:text-right lg:pr-10">
-    <div class="mb-2 font-display text-accent text-2xl">
+    <div class="mb-2 font-display text-accent dark:text-accent-dark text-2xl">
       <MD md={description} />
     </div>
-    <div class="uppercase font-display text-accent text-lg">
+    <div class="uppercase font-display text-accent dark:text-accent-dark text-lg">
       {formattedDate}
     </div>
     <div class="mt-2 flex justify-center lg:justify-end">
@@ -48,9 +48,9 @@
     </div>
   </div>
 
-  <hr class="my-4 border-accent" />
+  <hr class="my-4 border-accent dark:border-accent-dark" />
 
-  <article class="prose prose-neutral flex-grow 
+  <article class="prose prose-neutral dark:prose-invert flex-grow 
     font-body text-lg md:text-xl">
     <MD md={content} />
   </article>
