@@ -1,21 +1,17 @@
-import type { RequestHandler } from '@sveltejs/kit';
 import { readYaml } from '$lib/utils';
+import { error } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
 
-export const GET : RequestHandler = async () => {
+export const load : PageServerLoad = async () => {
   try {
     const prose = await readYaml('./content/pages/prose.yml');
-    return {
-      status: 200,
-      body: {
-        prose
-      }
+    return { 
+      prose,
+      pageTitle: 'Prose'
     };
 
   } catch (e) {
     console.log('some error happened', e);
-
-    return {
-      status: 500
-    };
+    throw error(500);
   }
 }

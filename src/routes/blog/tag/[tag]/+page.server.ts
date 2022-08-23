@@ -1,23 +1,21 @@
-import type { RequestHandler } from './__types/index';
+import type { PageServerLoad } from './$types';
 import { readBlogPosts } from '$lib/utils';
+import { error } from '@sveltejs/kit';
 
-export const GET : RequestHandler = async ({ params }) => {
+export const load : PageServerLoad = async ({ params }) => {
 
   try {
 
     const posts = await readBlogPosts();
 
     return {
-      status: 200,
-      body: {
-        posts,
-        selectedTag: params.tag,
-      }
+      posts,
+      selectedTag: params.tag,
+      pageTitle: `Blog (${params.tag})`,
     };
 
   } catch (e) {
     console.log('some error happened', e);
-    return { status: 500 };
-
+    throw error(500);
   }
 }

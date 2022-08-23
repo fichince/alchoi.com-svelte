@@ -1,19 +1,11 @@
-<script context="module" lang="ts">
-  import BlogPostIndex from '$lib/components/blog/BlogPostIndex.svelte';
-  import type { Load } from './__types/index';
-
-  export const load: Load = async ({ props }) => {
-    return {
-      stuff: {
-        pageTitle: 'Blog'
-      },
-      props
-    };
-  };
-</script>
-
 <script lang="ts">
-  export let posts : App.BlogPost[];
+  import BlogPostIndex from '$lib/components/blog/BlogPostIndex.svelte';
+  import type { PageData } from './$types';
+
+  export let data : PageData;
+  let posts : App.BlogPost[];
+  
+  $: posts = data.posts;
 </script>
 
 <BlogPostIndex {posts} />

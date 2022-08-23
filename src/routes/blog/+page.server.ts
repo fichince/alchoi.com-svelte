@@ -1,22 +1,20 @@
-import type { RequestHandler } from "@sveltejs/kit";
+import type { PageServerLoad } from './$types';
+import { error } from "@sveltejs/kit";
 import { readBlogPosts } from '$lib/utils';
 
-export const GET : RequestHandler = async () => {
+export const load : PageServerLoad = async () => {
 
   try {
 
     const posts = await readBlogPosts();
 
     return {
-      status: 200,
-      body: {
-        posts
-      }
+      posts,
+      pageTitle: 'Blog',
     };
 
   } catch (e) {
     console.log('some error happened', e);
-    return { status: 500 };
-
+    throw error(500);
   }
 }

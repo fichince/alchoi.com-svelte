@@ -1,9 +1,3 @@
-<script context="module" lang="ts">
-  // this page is entirely static with no JS interactivity needed
-  export const hydrate = false;
-  export const router = false;
-</script>
-
 <script>
   import Icon from 'svelte-awesome';
   import githubSquare from 'svelte-awesome/icons/githubSquare';
