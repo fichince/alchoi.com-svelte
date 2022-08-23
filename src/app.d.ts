@@ -7,11 +7,6 @@ declare namespace App {
   // interface Locals {}
   // interface Platform {}
   // interface Session {}
-  interface Stuff {
-    pageTitle? : string;
-    description? : string;
-    animate? : boolean;
-  }
 
   type BlogPost = {
     slug : string,
