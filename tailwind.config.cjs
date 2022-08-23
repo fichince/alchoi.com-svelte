@@ -1,6 +1,7 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
+  darkMode: 'class',
   content: [
     "./src/**/*.svelte",
     "./src/**/*.html"
@@ -9,10 +10,14 @@ module.exports = {
     extend: {
       colors: {
         primary: '#C6CAB9',
+        'primary-dark': '#1C2635',
         secondary: '#CCCBCD',
         tertiary: '#FBFBF2',
+        'tertiary-dark': '#334661',
         accent: '#1C2635',
+        'accent-dark': '#C6CAB9',
         pop: colors.red[800],
+        'pop-dark': colors.red[400],
       },
       fontFamily: {
         display: ['Special Elite', 'serif'],
@@ -22,9 +27,38 @@ module.exports = {
       typography: ({ theme }) => ({
         neutral: {
           css: {
-            '--tw-prose-hr': theme('colors.accent'),
-            '--tw-prose-quote-borders': theme('colors.accent'),
+            '--tw-prose-body': theme('colors.accent'),
+            '--tw-prose-headings': theme('colors.accent'),
+            '--tw-prose-lead': theme('colors.accent'),
+            '--tw-prose-links': theme('colors.accent'),
+            '--tw-prose-bold': theme('colors.accent'),
+            '--tw-prose-counters': theme('colors.accent'),
             '--tw-prose-bullets': theme('colors.accent'),
+            '--tw-prose-hr': theme('colors.accent'),
+            '--tw-prose-quotes': theme('colors.accent'),
+            '--tw-prose-quote-borders': theme('colors.accent'),
+            '--tw-prose-captions': theme('colors.accent'),
+            '--tw-prose-code': theme('colors.accent'),
+            '--tw-prose-pre-code': theme('colors.accent-dark'),
+            '--tw-prose-pre-bg': theme('colors.accent'),
+            '--tw-prose-th-borders': theme('colors.accent'),
+            '--tw-prose-td-borders': theme('colors.accent'),
+            '--tw-prose-invert-body': theme('colors.accent-dark'),
+            '--tw-prose-invert-headings': theme('colors.accent-dark'),
+            '--tw-prose-invert-lead': theme('colors.accent-dark'),
+            '--tw-prose-invert-links': theme('colors.accent-dark'),
+            '--tw-prose-invert-bold': theme('colors.accent-dark'),
+            '--tw-prose-invert-counters': theme('colors.accent-dark'),
+            '--tw-prose-invert-bullets': theme('colors.accent-dark'),
+            '--tw-prose-invert-hr': theme('colors.accent-dark'),
+            '--tw-prose-invert-quotes': theme('colors.accent-dark'),
+            '--tw-prose-invert-quote-borders': theme('colors.accent-dark'),
+            '--tw-prose-invert-captions': theme('colors.accent-dark'),
+            '--tw-prose-invert-code': theme('colors.accent-dark'),
+            '--tw-prose-invert-pre-code': theme('colors.accent'),
+            '--tw-prose-invert-pre-bg': theme('colors.accent-dark'),
+            '--tw-prose-invert-th-borders': theme('colors.accent-dark'),
+            '--tw-prose-invert-td-borders': theme('colors.accent-dark'),
           }
         },
         DEFAULT: {

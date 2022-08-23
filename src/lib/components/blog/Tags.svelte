@@ -9,7 +9,9 @@
       <a href={`/blog/tag/${tag}`}>
         <div class="py-0.5 px-1 text-xs 
           border-accent text-accent
-          hover:bg-accent hover:text-gray-300
+          dark:border-accent-dark dark:text-accent-dark
+          hover:bg-accent hover:text-primary
+          dark:hover:bg-accent-dark dark:hover:text-primary-dark
           border rounded-md"
           class:hover:animate-bump-small={animate}>
           {tag}

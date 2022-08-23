@@ -13,10 +13,13 @@
 
 <AOS as="article" class="rounded-md
   shadow-lg
+  shadow-accent/30
+  dark:shadow-accent-dark/10
   m-3 p-6 w-full sm:w-3/4
   justify-self-center self-center
   flex flex-col sm:flex-row 
-  items-center bg-tertiary
+  items-center 
+  bg-tertiary dark:bg-tertiary-dark
   hover:animate-bump">
   <div class="mb-3 sm:mb-0 sm:mr-5">
     <a href={url} rel="noopener noreferrer" target="_blank">
@@ -26,19 +29,19 @@
   </div>
 
   <div class="text-center w-4/5">
-    <div class="text-xl sm:text-2xl lg:text-3xl mb-1 font-display">
+    <div class="text-xl sm:text-2xl lg:text-3xl mb-1 font-display text-accent dark:text-accent-dark">
       <a href={url} rel="noopener noreferrer" target="_blank">
         <MD md={title} />
       </a>
     </div>
 
-    <div class="font-body">
+    <div class="font-body text-accent dark:text-accent-dark">
       <MD md={description} />
     </div>
 
     {#if excerpt}
     <br />
-    <div class="font-body">
+    <div class="font-body text-accent dark:text-accent-dark">
       <MD md={excerpt} />
     </div>
     {/if}
