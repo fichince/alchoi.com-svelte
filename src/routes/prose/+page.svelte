@@ -1,19 +1,13 @@
-<script context="module" lang="ts">
-  import type { Load } from './__types/index';
-
-  export const load: Load = async ({ props }) => {
-    return {
-      stuff: {
-        pageTitle: 'Prose'
-      },
-      props
-    };
-  };
-</script>
-
 <script lang="ts">
+
   import Showcase from '$lib/components/Showcase.svelte';
-  export let prose : any[];
+  import type { PageData } from './$types';
+
+  export let data : PageData;
+
+  let prose : any[];
+  $: prose = data.prose;
+
 </script>
 
 <div class="mx-auto mb-6 text-center text-accent dark:text-accent-dark font-body text-lg">

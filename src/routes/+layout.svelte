@@ -58,8 +58,8 @@
     }
   };
 
-  $: pageTitle = stripMarkdown($page.stuff.pageTitle);
-  $: description = stripMarkdown($page.stuff.description);
+  $: pageTitle = stripMarkdown($page.data.pageTitle);
+  $: description = stripMarkdown($page.data.description);
   $: metaDescription = `${pageTitle} - ${description}`;
 
   $: expanded = innerWidth > 640;

@@ -1,19 +1,11 @@
-<script context="module" lang="ts">
-  import type { Load } from './__types/index';
-
-  export const load: Load = async ({ props }) => {
-    return {
-      stuff: {
-        pageTitle: 'Code'
-      },
-      props
-    };
-  };
-</script>
-
 <script lang="ts">
   import Showcase from '$lib/components/Showcase.svelte';
-  export let code : any[];
+import type { PageData } from './$types';
+  export let data : PageData;
+
+  let code : any[];
+  $: code = data.code;
+
 </script>
 
 <div class="mx-auto mb-6 text-center text-accent dark:text-accent-dark font-body text-lg">

@@ -1,29 +1,13 @@
-<script context="module" lang="ts">
-  import type { Load } from './__types/index';
-  import MD from '$lib/components/MD.svelte';
-  import Tags from '$lib/components/blog/Tags.svelte';
+<script lang="ts">
+  import type { PageData } from './$types';
   import { DateTime } from 'luxon';
   import { fade } from 'svelte/transition';
+  import MD from '$lib/components/MD.svelte';
+  import Tags from '$lib/components/blog/Tags.svelte';
 
-  export const load : Load = async ({ props }) => {
-    const { 
-      post: { 
-        title, description
-      } 
-    } = props;
+  export let data : PageData;
 
-    return {
-      stuff: {
-        pageTitle: title,
-        description
-      },
-      props
-    }
-  };
-</script>
-
-<script lang="ts">
-  export let post : App.BlogPost;
+  $: post = data.post;
 
   $: description = post.description;
   $: formattedDate = DateTime.fromISO(post.date).toLocaleString(DateTime.DATE_FULL);
