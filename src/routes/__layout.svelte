@@ -2,8 +2,12 @@
   import NavLink from '$lib/components/NavLink.svelte';
   import MD from '$lib/components/MD.svelte';
   import { stripMarkdown } from '$lib/utils';
+  import { onMount } from 'svelte';
 
   import { page } from '$app/stores';
+  import Icon from 'svelte-awesome';
+  import sunO from 'svelte-awesome/icons/sunO';
+  import moonO from 'svelte-awesome/icons/moonO';
 
   const NAV = [
     {
@@ -25,19 +29,32 @@
   let expanded : boolean = true;
   let innerWidth : number = 640;
   let titleBar = '';
+  let theme = 'dark';
+
+  onMount(() => {
+    theme = localStorage.getItem('theme') || 'dark';
+  });
 
   const toggleExpanded = () => {
     expanded = !expanded;
   };
 
-  const toggleDark = () => {
-    console.log('here', localStorage.getItem('theme'));
-    if (localStorage.getItem('theme') === 'dark') {
-      localStorage.setItem('theme', 'light');
-      document.documentElement.classList.remove('dark');
-    } else {
-      localStorage.setItem('theme', 'dark');
+  const setDarkMode = (theme : string) => {
+    if (theme === 'dark') {
       document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
+  const toggleDark = () => {
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      setDarkMode(newTheme);
+      localStorage.setItem('theme', newTheme);
+
+      theme = newTheme;
     }
   };
 
@@ -66,6 +83,22 @@
   <meta name="twitter:title" content={pageTitle} />
   <meta name="twitter:description" content={metaDescription} />
   <meta name="twitter:image" content="https://alchoi.com/favicon.png" />
+  <script>
+    var theme = localStorage.getItem('theme');
+    if (!theme) {
+      // initialize theme based on system dark mode preference
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      theme = prefersDark ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+    }
+
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
 </svelte:head>
 
 <div class="m-auto min-h-screen bg-primary dark:bg-primary-dark">
@@ -86,9 +119,17 @@
         {#each NAV as { name, to } (name)}
           <NavLink {to} {name} />
         {/each}
+
+          <div class="flex-no-grow flex-no-shrink relative py-3 px-5 leading-normal text-tertiary dark:text-tertiary-dark font-display 
+            no-underline flex items-center 
+            hover:bg-tertiary dark:hover:bg-tertiary-dark
+            hover:text-accent dark:hover:text-accent-dark">
+            <button on:click={toggleDark}>
+              <Icon data={theme === 'dark' ? sunO : moonO} scale={1.5} />
+            </button>
+          </div>
         </div>
       </div>
-      <button on:click={toggleDark}>Toggle</button>
     {/if}
   </nav>
 
