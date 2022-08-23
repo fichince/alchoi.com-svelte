@@ -1,11 +1,12 @@
-import type { RequestHandler } from './__types/index';
+import type { PageServerLoad } from './$types';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import matter from 'gray-matter';
+import { error } from '@sveltejs/kit';
 
 import { BLOG_ROOT } from '$lib/utils';
 
-export const GET : RequestHandler = async ({ params }) => {
+export const load : PageServerLoad = async ({ params }) => {
 
   const { slug } = params;
 
@@ -29,15 +30,14 @@ export const GET : RequestHandler = async ({ params }) => {
 
     console.log(`Loaded ${data.title}`);
 
-    return { 
-      status: 200,
-      body: {
-        post
-      }
+    return {
+      post,
+      pageTitle: post.title,
+      description: post.description,
     };
   } catch (e) {
     console.log('some error happened', e);
-    return { status: 500 };
+    throw error(500);
   } finally {
     f?.close();
   }

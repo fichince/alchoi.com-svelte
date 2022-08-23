@@ -1,20 +1,6 @@
 <script lang="ts">
-  // TODO - I don't need to do this as a layout if it's only 
-  // used on the front page
-
-  import { page } from '$app/stores';
-
-  const title = 'Albert Choi';
-
-  $: pageTitle = $page.stuff.pageTitle;
-  $: animate = $page.stuff.animate;
-
-  $: titleBar = (pageTitle ? `${pageTitle} | ` : '') + title;
+  export let animate : boolean = false;
 </script>
-
-<svelte:head>
-  <title>{titleBar}</title>
-</svelte:head>
 
 <div class="absolute top-0 left-0 w-screen h-screen overflow-hidden">
   <div class="homepage w-full h-full bg-cover scale-110 animate-blur-in blur-sm">

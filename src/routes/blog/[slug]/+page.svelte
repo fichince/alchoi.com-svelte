@@ -1,23 +1,13 @@
-<script context="module" lang="ts">
-  import type { Load } from './__types/index';
-  import MD from '$lib/components/MD.svelte';
-  import Tags from '$lib/components/blog/Tags.svelte';
+<script lang="ts">
+  import type { PageData } from './$types';
   import { DateTime } from 'luxon';
   import { fade } from 'svelte/transition';
+  import MD from '$lib/components/MD.svelte';
+  import Tags from '$lib/components/blog/Tags.svelte';
 
-  export const load : Load = async ({ props }) => {
-    const { post: { title } } = props;
-    return {
-      stuff: {
-        pageTitle: title,
-      },
-      props
-    }
-  };
-</script>
+  export let data : PageData;
 
-<script lang="ts">
-  export let post : App.BlogPost;
+  $: post = data.post;
 
   $: description = post.description;
   $: formattedDate = DateTime.fromISO(post.date).toLocaleString(DateTime.DATE_FULL);
@@ -31,10 +21,10 @@
 
   <div class="w-full lg:w-1/3 lg:mr-4 lg:ml-2
     text-center lg:text-right lg:pr-10">
-    <div class="mb-2 font-display text-accent text-2xl">
+    <div class="mb-2 font-display text-accent dark:text-accent-dark text-2xl">
       <MD md={description} />
     </div>
-    <div class="uppercase font-display text-accent text-lg">
+    <div class="uppercase font-display text-accent dark:text-accent-dark text-lg">
       {formattedDate}
     </div>
     <div class="mt-2 flex justify-center lg:justify-end">
@@ -42,9 +32,9 @@
     </div>
   </div>
 
-  <hr class="my-4 border-accent" />
+  <hr class="my-4 border-accent dark:border-accent-dark" />
 
-  <article class="prose prose-neutral flex-grow 
+  <article class="prose prose-neutral dark:prose-invert flex-grow 
     font-body text-lg md:text-xl">
     <MD md={content} />
   </article>

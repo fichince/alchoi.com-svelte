@@ -16,16 +16,19 @@
 
 <AOS class="rounded-md
   shadow-lg
+  shadow-accent/30
+  dark:shadow-accent-dark/10
   w-full sm:w-1/2
   m-3 p-5
   bg-tertiary
+  dark:bg-tertiary-dark
   hover:animate-bump">
   <a href={`/blog/${slug}`}>
-    <div class="text-2xl text-accent font-display">
+    <div class="text-2xl text-accent dark:text-accent-dark font-display">
       <MD md={title} />
     </div>
-    <hr class="border-accent my-3" />
-    <div class="flex justify-between text-accent font-body items-baseline">
+    <hr class="border-accent dark:border-accent-dark my-3" />
+    <div class="flex justify-between text-accent dark:text-accent-dark font-body items-baseline">
       <MD md={description} />
       <span class="ml-5 min-w-fit">{formattedDate}</span>
     </div>

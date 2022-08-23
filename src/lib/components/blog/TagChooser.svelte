@@ -10,7 +10,7 @@
   const liClasses = `
     before:mx-1 before:content-['⋅'] 
     last:after:content-['⋅'] last:after:mx-1
-    text-accent hover:animate-bump-small
+    text-accent dark:text-accent-dark hover:animate-bump-small
   `;
 
   $: allTags = 
@@ -28,7 +28,7 @@
   {#each tags as tag (tag)}
   {@const selected = selectedTag === tag}
     <li class={liClasses}> 
-      <span class={cs('underline', { 'italic font-bold text-pop': selected })}>
+      <span class={cs('underline', { 'italic font-bold text-pop dark:text-pop-dark': selected })}>
         <a href={`/blog/tag/${tag}`}>
           {tag}
         </a>
