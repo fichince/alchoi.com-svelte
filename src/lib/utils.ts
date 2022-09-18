@@ -7,6 +7,7 @@ import reverse from 'lodash/reverse';
 import clamp from 'lodash/clamp';
 import map from 'lodash/map';
 import mapValues from 'lodash/mapValues';
+import isString from 'lodash/isString';
 
 import { parse } from 'yaml';
 import { remark } from 'remark';
@@ -17,8 +18,9 @@ import lunr from 'lunr';
 
 export const BLOG_ROOT = './content/blog';
 
-export const stripMarkdown = (md : string | undefined) : string => {
+export const stripMarkdown = (md : any) : string => {
   if (!md) return '';
+  if (!isString(md)) return md;
   return remark().use(strip).processSync(md).toString().trim();
 };
 
@@ -38,6 +40,8 @@ export const readBlogPosts = async () => {
         const contents = await f.readFile({ encoding: 'utf-8' });
 
         const { data, content } = matter(contents);
+
+        if (data.draft) continue;
 
         entries.push({
           ...data as App.BlogPost,
