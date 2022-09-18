@@ -9,10 +9,8 @@
 
   $: post = data.post;
 
-  $: description = post.description;
   $: formattedDate = DateTime.fromISO(post.date).toLocaleString(DateTime.DATE_FULL);
-  $: content = post.content;
-  $: tags = post.tags;
+  $: ({ description, content, tags } = post);
 
 </script>
 

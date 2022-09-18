@@ -4,11 +4,7 @@
 
   export let data : PageData;
 
-  let posts : App.BlogPost[];
-  let selectedTag : string;
-
-  $: posts = data.posts;
-  $: selectedTag = data.selectedTag;
+  $: ({ posts, selectedTag } = data);
 
 </script>
 
