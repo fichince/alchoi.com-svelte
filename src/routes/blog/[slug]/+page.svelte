@@ -4,6 +4,7 @@
   import { fade } from 'svelte/transition';
   import MD from '$lib/components/MD.svelte';
   import Tags from '$lib/components/blog/Tags.svelte';
+  import linkpreview from '$lib/actions/linkpreview';
 
   export let data : PageData;
 
@@ -33,7 +34,7 @@
   <hr class="my-4 border-accent dark:border-accent-dark" />
 
   <article class="prose prose-neutral dark:prose-invert flex-grow 
-    font-body text-lg md:text-xl">
+    font-body text-lg md:text-xl" use:linkpreview>
     <MD md={content} />
   </article>
 </div>
