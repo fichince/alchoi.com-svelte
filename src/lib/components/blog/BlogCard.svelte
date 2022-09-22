@@ -10,7 +10,7 @@
   $: title = post.title;
   $: description = post.description;
   $: tags = post.tags;
-  $: formattedDate = DateTime.fromISO(post.date).toLocaleString(DateTime.DATE_FULL);
+  $: formattedDate = DateTime.fromISO(post.date).toUTC().toLocaleString(DateTime.DATE_FULL);
 
 </script>
 
