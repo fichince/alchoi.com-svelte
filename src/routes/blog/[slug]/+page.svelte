@@ -10,7 +10,7 @@
   $: post = data.post;
 
   $: description = post.description;
-  $: formattedDate = DateTime.fromISO(post.date).toLocaleString(DateTime.DATE_FULL);
+  $: formattedDate = DateTime.fromISO(post.date).toUTC().toLocaleString(DateTime.DATE_FULL);
   $: content = post.content;
   $: tags = post.tags;
 
