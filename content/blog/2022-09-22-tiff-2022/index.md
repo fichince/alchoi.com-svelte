@@ -1,7 +1,7 @@
 ---
 layout: post
 title: TIFF is back in 2022
-description: _Luxembourg, Luxembourg_, _The Grab_, _The Colour of Ink_, _Bones of Crows_, _Raymond & Ray_
+description: _Luxembourg, Luxembourg_; _The Grab_; _The Colour of Ink_; _Bones of Crows_; _Raymond & Ray_
 date: 2022-09-22
 tags:
   - movies
