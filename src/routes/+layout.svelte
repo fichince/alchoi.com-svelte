@@ -77,7 +77,8 @@
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={metaDescription} />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://alchoi.com/favicon.png" />
+  <!--<meta property="og:image" content="https://alchoi.com/favicon.png" />-->
+  <meta property="og:image" content="/api/og" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={pageTitle} />
